@@ -1,0 +1,48 @@
+MODE: train
+run_name: a
+output_dir: outputs
+config:
+  epochs: 100
+  batch_size: 4
+  log_by_iteration: false
+  any_time: 15
+  model:
+    type: GuidedGaussianDiffusion
+    timesteps: 25
+    beta_schedule: 'linear'
+    auto_normalize: False
+    umodel:
+      dim: 64
+      dim_mults: [ 1, 2, 4, 8 ]
+  optimizer:
+    type: Adam
+    lr: 0.0005
+    betas: [0.9, 0.99]
+  scheduler:
+    type: OneCycleLR
+    max_lr: 0.0005
+    epochs: 100
+    anneal_strategy: "cos"
+    pct_start: 0.1
+
+  dataset:
+    type: ISDataset
+    guiding_col: "Member"
+    data_dir: IS_1_1.0_0_0_0_0_0_256_large_lt_done_reduced
+    csv_file: IS_1_1.0_0_0_0_0_0_256_large_lt_done_reduced/small_selected.csv
+    v_i: 1
+    crop: [ 0,256,0,256 ]
+    var_indexes: [ 't2m']
+    invert_norm: false
+    image_size: 256
+    mean_file: IS_1_1.0_0_0_0_0_0_256_large_lt_done_reduced/stat_files/mean_rr.npy
+    max_file: IS_1_1.0_0_0_0_0_0_256_large_lt_done_reduced/stat_files/max_rr_log.npy
+    num_workers: 16
+
+  tracking:
+#    - type: Wandb
+#      wandbproject: DDPM-weather
+#      entityWDB: jrabault
+    - type: Mlflow
+      tracking_uri: ../mlruns
+      experiment_name: DDPM-weather

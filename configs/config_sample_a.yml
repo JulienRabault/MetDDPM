@@ -1,0 +1,10 @@
+MODE: sample
+run_name: sample
+output_dir: outputs
+config:
+  type: guided
+  batch_size: 4
+  snapshot_path: outputs/a/best.pt
+  dataset:
+    data_dir: IS_1_1.0_0_0_0_0_0_256_large_lt_done_reduced
+    csv_file: IS_1_1.0_0_0_0_0_0_256_large_lt_done_reduced/small_selected.csv
