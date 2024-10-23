@@ -55,7 +55,7 @@ To use the project, follow these instructions:
     - `-r` or `--resume`: Resume training from a snapshot.
 
 ## File Structure
-
+```
 MetDPPM/
 │
 ├── main.py                          # Main script for training and sampling.
@@ -84,3 +84,4 @@ MetDPPM/
 │
 └── utils/
 └── distributed.py               # Utilities for distributed training.
+```
