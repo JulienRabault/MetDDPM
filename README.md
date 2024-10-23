@@ -56,19 +56,31 @@ To use the project, follow these instructions:
 
 ## File Structure
 
-- `main.py`: Main script for training and sampling.
-- `configs/config.py`: Configuration module for the project.
-- `configs/config_sample_a.yml`: Sample configuration file for sampling.
-- `configs/config_train_a.yml`: Sample configuration file for training.
-- `core/optim.py`: Optimizer module.
-- `core/sampler.py`: Sampler module.
-- `core/scheduler.py`: Scheduler module.
-- `core/trackers.py`: Trackers module.
-- `core/trainer.py`: Trainer module.
-- `datasets/base_dataset.py`: Base dataset module.
-- `datasets/is_dataset.py`: IS dataset module.
-- `datasets/multi_option_normalize.py`: Multi-option normalization module.
-- `datasets/normalizer.py`: Normalizer module.
-- `diffusion_models/custom_model.py`: Custom model module.
-- `diffusion_models/guided_gaussian_diffusion.py`: Guided Gaussian diffusion model module.
-- `utils/distributed.py`: Utilities for distributed training.
+MetDPPM/
+│
+├── main.py                          # Main script for training and sampling.
+│
+├── configs/
+│   ├── config.py                    # Configuration module for the project.
+│   ├── config_sample_a.yml          # Sample configuration file for sampling.
+│   └── config_train_a.yml           # Sample configuration file for training.
+│
+├── core/
+│   ├── optim.py                     # Optimizer module.
+│   ├── sampler.py                   # Sampler module.
+│   ├── scheduler.py                  # Scheduler module.
+│   ├── trackers.py                  # Trackers module.
+│   └── trainer.py                   # Trainer module.
+│
+├── datasets/
+│   ├── base_dataset.py              # Base dataset module.
+│   ├── is_dataset.py                # IS dataset module.
+│   ├── multi_option_normalize.py   # Multi-option normalization module.
+│   └── normalizer.py               # Normalizer module.
+│
+├── diffusion_models/
+│   ├── custom_model.py              # Custom model module.
+│   └── guided_gaussian_diffusion.py # Guided Gaussian diffusion model module.
+│
+└── utils/
+└── distributed.py               # Utilities for distributed training.
